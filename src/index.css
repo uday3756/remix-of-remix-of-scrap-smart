@@ -2,119 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* Leaflet CSS */
 @import 'leaflet/dist/leaflet.css';
 
 @layer base {
   :root {
-    /* Eco-friendly green palette */
-    --background: 120 20% 98%;
-    --foreground: 150 30% 10%;
+    /* Smart Scrap Pickup - Eco-friendly palette */
+    /* Light Green #6BCF9B as primary */
+    --background: 0 0% 100%;
+    --foreground: 145 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 150 30% 10%;
+    --card-foreground: 145 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 30% 10%;
+    --popover-foreground: 145 25% 15%;
 
-    /* Primary - Vibrant eco green */
-    --primary: 142 70% 45%;
+    /* Primary - Light Green #6BCF9B (HSL: 150, 55%, 62%) */
+    --primary: 150 55% 62%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Warm earth tone */
-    --secondary: 35 60% 95%;
-    --secondary-foreground: 35 50% 25%;
+    /* Secondary - Soft background */
+    --secondary: 145 30% 96%;
+    --secondary-foreground: 145 35% 25%;
 
-    --muted: 120 15% 94%;
-    --muted-foreground: 150 10% 45%;
+    --muted: 145 20% 95%;
+    --muted-foreground: 145 10% 45%;
 
-    /* Accent - Fresh teal */
-    --accent: 168 60% 45%;
+    /* Accent - Soft dark green #2E7D32 (HSL: 122, 46%, 33%) */
+    --accent: 122 46% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Success - For confirmations */
-    --success: 142 70% 45%;
+    /* Success */
+    --success: 150 55% 62%;
     --success-foreground: 0 0% 100%;
 
-    /* Warning - For alerts */
+    /* Warning */
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 120 15% 90%;
-    --input: 120 15% 90%;
-    --ring: 142 70% 45%;
+    --border: 145 20% 90%;
+    --input: 145 20% 90%;
+    --ring: 150 55% 62%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142, 70%, 45%) 0%, hsl(168, 60%, 45%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(35, 60%, 60%) 0%, hsl(25, 70%, 50%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(142, 70%, 45%) 0%, hsl(150, 60%, 35%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(150, 55%, 62%) 0%, hsl(122, 46%, 33%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(145, 30%, 98%) 0%, hsl(145, 20%, 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(150, 55%, 62%) 0%, hsl(145, 50%, 55%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(150 30% 10% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(150 30% 10% / 0.1), 0 2px 4px -2px hsl(150 30% 10% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(150 30% 10% / 0.1), 0 4px 6px -4px hsl(150 30% 10% / 0.1);
-    --shadow-card: 0 4px 20px -4px hsl(142 70% 45% / 0.15);
+    --shadow-sm: 0 1px 2px 0 hsl(145 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(145 25% 15% / 0.1), 0 2px 4px -2px hsl(145 25% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(145 25% 15% / 0.1), 0 4px 6px -4px hsl(145 25% 15% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(150 55% 62% / 0.2);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 142 70% 45%;
+    --sidebar-foreground: 145 25% 15%;
+    --sidebar-primary: 150 55% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 120 15% 94%;
-    --sidebar-accent-foreground: 150 30% 10%;
-    --sidebar-border: 120 15% 90%;
-    --sidebar-ring: 142 70% 45%;
+    --sidebar-accent: 145 20% 95%;
+    --sidebar-accent-foreground: 145 25% 15%;
+    --sidebar-border: 145 20% 90%;
+    --sidebar-ring: 150 55% 62%;
   }
 
   .dark {
-    --background: 150 30% 8%;
-    --foreground: 120 20% 98%;
+    --background: 145 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 150 25% 12%;
-    --card-foreground: 120 20% 98%;
+    --card: 145 25% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 150 25% 12%;
-    --popover-foreground: 120 20% 98%;
+    --popover: 145 25% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 142 70% 50%;
+    --primary: 150 55% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 30% 20%;
-    --secondary-foreground: 35 50% 90%;
+    --secondary: 145 25% 18%;
+    --secondary-foreground: 145 30% 90%;
 
-    --muted: 150 20% 18%;
-    --muted-foreground: 120 10% 60%;
+    --muted: 145 20% 18%;
+    --muted-foreground: 145 10% 60%;
 
-    --accent: 168 60% 50%;
+    --accent: 122 46% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 70% 50%;
+    --success: 150 55% 55%;
     --success-foreground: 0 0% 100%;
 
     --warning: 38 92% 55%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 150 20% 20%;
-    --input: 150 20% 20%;
-    --ring: 142 70% 50%;
+    --border: 145 20% 20%;
+    --input: 145 20% 20%;
+    --ring: 150 55% 55%;
 
-    --sidebar-background: 150 25% 10%;
-    --sidebar-foreground: 120 20% 90%;
-    --sidebar-primary: 142 70% 50%;
+    --sidebar-background: 145 25% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 150 55% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 150 20% 18%;
-    --sidebar-accent-foreground: 120 20% 98%;
-    --sidebar-border: 150 20% 20%;
-    --sidebar-ring: 142 70% 50%;
+    --sidebar-accent: 145 20% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 145 20% 20%;
+    --sidebar-ring: 150 55% 55%;
   }
 }
 
@@ -124,7 +125,7 @@
   }
 
   html {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
 
   body {
@@ -137,8 +138,8 @@
     background: var(--gradient-primary);
   }
 
-  .gradient-warm {
-    background: var(--gradient-warm);
+  .gradient-soft {
+    background: var(--gradient-soft);
   }
 
   .gradient-hero {
@@ -199,6 +200,16 @@
   50% { opacity: 0.7; }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
@@ -213,4 +224,12 @@
 
 .animate-pulse-soft {
   animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
 }

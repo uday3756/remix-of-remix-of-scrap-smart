@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-type StatusType = 'pending' | 'assigned' | 'on_the_way' | 'at_location' | 'picked_up' | 'completed' | 'cancelled';
+export type StatusType = 'pending' | 'accepted' | 'assigned' | 'on_the_way' | 'at_location' | 'picked_up' | 'completed' | 'cancelled';
 
 interface StatusBadgeProps {
   status: StatusType;
@@ -12,6 +12,10 @@ const statusConfig: Record<StatusType, { label: string; className: string }> = {
   pending: {
     label: 'Pending',
     className: 'bg-warning/10 text-warning border-warning/20',
+  },
+  accepted: {
+    label: 'Accepted',
+    className: 'bg-accent/10 text-accent border-accent/20',
   },
   assigned: {
     label: 'Assigned',
