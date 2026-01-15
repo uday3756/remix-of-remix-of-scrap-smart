@@ -28,6 +28,7 @@ interface MobileHeaderProps {
   subtitle?: string;
   leftAction?: React.ReactNode;
   rightAction?: React.ReactNode;
+  centerContent?: React.ReactNode;
   transparent?: boolean;
 }
 
@@ -36,6 +37,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
   subtitle,
   leftAction,
   rightAction,
+  centerContent,
   transparent = false,
 }) => {
   return (
@@ -46,9 +48,13 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
       <div className="w-10 flex items-center justify-start">
         {leftAction}
       </div>
-      <div className="flex-1 text-center">
-        {title && <h1 className="font-semibold text-foreground">{title}</h1>}
-        {subtitle && <p className="text-xs text-muted-foreground">{subtitle}</p>}
+      <div className="flex-1 text-center flex items-center justify-center">
+        {centerContent || (
+          <>
+            {title && <h1 className="font-semibold text-foreground">{title}</h1>}
+            {subtitle && <p className="text-xs text-muted-foreground">{subtitle}</p>}
+          </>
+        )}
       </div>
       <div className="w-10 flex items-center justify-end">
         {rightAction}

@@ -14,7 +14,174 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      order_assignments: {
+        Row: {
+          accepted_at: string | null
+          completed_at: string | null
+          created_at: string
+          id: string
+          order_id: string
+          scrapper_id: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          order_id: string
+          scrapper_id: string
+        }
+        Update: {
+          accepted_at?: string | null
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          order_id?: string
+          scrapper_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_assignments_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_assignments_scrapper_id_fkey"
+            columns: ["scrapper_id"]
+            isOneToOne: false
+            referencedRelation: "scrappers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          address: string
+          created_at: string
+          estimated_amount: number | null
+          final_amount: number | null
+          id: string
+          images: string[] | null
+          latitude: number | null
+          longitude: number | null
+          notes: string | null
+          pickup_date: string
+          pickup_time: string
+          scrap_type: string
+          status: string
+          updated_at: string
+          user_id: string
+          weight: string | null
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          estimated_amount?: number | null
+          final_amount?: number | null
+          id?: string
+          images?: string[] | null
+          latitude?: number | null
+          longitude?: number | null
+          notes?: string | null
+          pickup_date: string
+          pickup_time: string
+          scrap_type: string
+          status?: string
+          updated_at?: string
+          user_id: string
+          weight?: string | null
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          estimated_amount?: number | null
+          final_amount?: number | null
+          id?: string
+          images?: string[] | null
+          latitude?: number | null
+          longitude?: number | null
+          notes?: string | null
+          pickup_date?: string
+          pickup_time?: string
+          scrap_type?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+          weight?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          id: string
+          name: string | null
+          phone: string | null
+          role: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          name?: string | null
+          phone?: string | null
+          role?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          name?: string | null
+          phone?: string | null
+          role?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      scrappers: {
+        Row: {
+          active: boolean
+          created_at: string
+          id: string
+          latitude: number | null
+          longitude: number | null
+          name: string
+          phone: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          latitude?: number | null
+          longitude?: number | null
+          name: string
+          phone: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          latitude?: number | null
+          longitude?: number | null
+          name?: string
+          phone?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
